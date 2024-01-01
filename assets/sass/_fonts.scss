@@ -1,0 +1,13 @@
+@mixin font($font-family, $font-file) {
+    @font-face {
+      font-family: $font-family;
+      src: url($font-file+'.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+}
+
+@include font('InterBold', '@/assets/fonts/Inter/static/Inter-Bold');
+@include font('InterExtraBold', '@/assets/fonts/Inter/static/Inter-ExtraBold');
+@include font('InterLight', '@/assets/fonts/Inter/static/Inter-Light');
+@include font('InterRegular', '@/assets/fonts/Inter/static/Inter-Regular');
