@@ -1,12 +1,26 @@
 <template>
     <div class="div">
         <div class="div_cards">
-            <GlobalsHighCard></GlobalsHighCard>
+            <GlobalsHighCard :type="contentType"></GlobalsHighCard>
         </div>
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+let contentType = ref('')
+
+if (route.name === 'series') {
+contentType.value = 'series'
+} else if (route.name === 'movies') {
+contentType.value = 'movies'
+} else if (route.name === 'upcoming') {
+contentType.value = 'popularMovies'
+}
+</script>
 
 <style scoped lang="scss">
 .div {

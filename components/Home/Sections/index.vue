@@ -1,8 +1,8 @@
 <template>
     <div class="contentsections">
-        <SectionsHomeSectionPopular></SectionsHomeSectionPopular>
-        <SectionsHomeSectionMovies></SectionsHomeSectionMovies>
-        <SectionsHomeSectionSeries></SectionsHomeSectionSeries>
+        <HomeSectionsUpcoming></HomeSectionsUpcoming>
+        <HomeSectionsMovies></HomeSectionsMovies>
+        <HomeSectionsSeries></HomeSectionsSeries>
     </div>
 </template>
 

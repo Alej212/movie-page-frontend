@@ -1,6 +1,6 @@
 <template>
-    <SectionsHomeImgSection></SectionsHomeImgSection>
-    <SectionsHomeContentSection></SectionsHomeContentSection>
+    <HomeSlider></HomeSlider>
+    <HomeSections></HomeSections>
 </template>
 
 <script setup></script>
