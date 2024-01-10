@@ -1,6 +1,8 @@
 <template>
     <div class="card" v-for="movie in movies" :key="movie.id">
-        <img class="card_image" :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="movie poster"><img/>
+        <router-link :to="`/${props.type}/${movie.id}`">
+            <img class="card_image" :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path " alt="movie poster"><img/>
+        </router-link>
         <div class="card_info">
             <h5 class="card_h5">{{ movie.title || movie.name }}</h5>
             <div class="card_date">
@@ -26,9 +28,9 @@ const props = defineProps({
 })
 
 onMounted(async () => {
-  if (props.type === 'popularMovies') {
-    await movieStore.fetchPopularMovies()
-    movies.value = movieStore.$state.popularMovies
+  if (props.type === 'upcoming') {
+    await movieStore.fetchUpcomingMovies()
+    movies.value = movieStore.$state.upcoming
   } else if (props.type === 'movies') {
     await movieStore.fetchMovies()
     movies.value = movieStore.$state.movies
@@ -37,6 +39,8 @@ onMounted(async () => {
     movies.value = movieStore.$state.series
   }
 })
+
+console.log(movies.value)
 </script>
 
 <style scoped lang="scss">

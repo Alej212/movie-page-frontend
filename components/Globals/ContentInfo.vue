@@ -1,34 +1,51 @@
 <template>
     <section class="section">
         <div class="section_info">
-            <h3 class="section_h3">Info Seasson</h3>
+            <h3 class="section_h3">{{ movie.title }}</h3>
             <p class="section_p">
-                is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                {{ movie.overview }}
             </p>
         </div>
         <div class="section_categories">
             <h4 class="section_h4">Categories</h4>
-            <ul class="section_ul">
-                <li class="section_li">category</li>
-                <li class="section_li">category</li>
-                <li class="section_li">category</li>
-                <li class="section_li">category</li>
+            <ul class="section_ul" v-for="category in movie.genres">
+                <li class="section_li">{{ category.name }}</li>
             </ul>
         </div>
     </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { useMovieStore } from '../../store/FetchMovies'
+
+const route = useRoute()
+const movieStore = useMovieStore()
+const movie = ref({})
+
+const fetchData = async () => {
+  const id = route.params.id
+  if (route.name === 'movies-id' || route.name === 'upcoming-id') {
+    await movieStore.fetchMovieDetail(id)
+    movie.value = movieStore.$state.movieDetail
+  } else if (route.name === 'series-id') {
+    await movieStore.fetchSerieDetail(id)
+    movie.value = movieStore.$state.serieDetail
+  }
+}
+onMounted(fetchData)
+</script>
 
 <style scoped lang="scss">
 .section {
     display: flex;
-height: 25.5625rem;
-padding: 0.625rem 1.875rem;
-flex-direction: column;
-align-items: flex-start;
-gap: 2.5rem;
-align-self: stretch;
+    height: 25.5625rem;
+    padding: 0.625rem 1.875rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+    align-self: stretch;
 
     &_info {
         display: flex;

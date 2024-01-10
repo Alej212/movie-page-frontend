@@ -1,9 +1,7 @@
 <template>
     <div class="visualizer">
         <div class="visualizer_content">
-            <div class="visualizer_screen">
-                <Icon name="teenyicons:play-solid" class="visualizer_iconplay"></Icon>
-            </div>
+            <iframe :src="`https://www.youtube.com/embed/${movie}`" class="visualizer_screen" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div class="visualizer_bar">
                 <p class="visualizer_time"></p>
                 <div class="visualizer_proguess">
@@ -11,21 +9,43 @@
                 </div>
                 <p class="visualizer_time"></p>
             </div>
-            <div class="visualizer_options">
-                <Icon name="mdi:heart" class="visualizer_icon"></Icon>
-                <div class="visualizer_icons">
-                    <Icon name="solar:double-alt-arrow-left-bold" class="visualizer_icon"></Icon>
-                    <Icon name="ic:round-pause" class="visualizer_icon"></Icon>
-                    <Icon name="teenyicons:play-solid" class="visualizer_icon"></Icon>
-                    <Icon name="solar:double-alt-arrow-right-bold" class="visualizer_icon"></Icon>
-                </div>
-                <Icon name="icomoon-free:enlarge" class="visualizer_icon"></Icon>
-            </div>
         </div>
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import axios from 'axios'
+
+const route = useRoute()
+const movie = ref(null)
+
+onMounted(async () => {
+  const id = route.params.id
+  let response
+  try {
+    if (route.name === 'movies-id' || route.name === 'upcoming-id') {
+      response = await axios.get(`https://api.themoviedb.org/3/movie/${id}/videos`, {
+        params: {
+          api_key: '0b424004cc638a79ae8c6d443318e705',
+        },
+      })
+    } else if (route.name === 'series-id') {
+      response = await axios.get(`https://api.themoviedb.org/3/tv/${id}/videos`, {
+        params: {
+          api_key: '0b424004cc638a79ae8c6d443318e705',
+        },
+      })
+    }
+    movie.value = response.data.results[0].key
+  } catch (error) {
+    console.log(error)
+  }
+})
+</script>
+
+
 
 <style scoped lang="scss">
 .visualizer {
@@ -51,14 +71,14 @@
         align-items: center;
         flex: 1 0 0;
         align-self: stretch;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url('../../assets/images/image1.png'), lightgray 50% / cover no-repeat;
+        //background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url('../../assets/images/image1.png'), lightgray 50% / cover no-repeat;
     }
     &_iconplay {
         width: 5rem;
         height: 5rem;
     }
     &_bar {
-        display: flex;
+        display: none;
         padding: 0.625rem;
         align-items: center;
         gap: 0.625rem;
@@ -90,7 +110,7 @@
         background: var(--Foundation-Red-Normal, #980033);
     }
     &_options {
-        display: flex;
+        display: none;
         padding: 0.3125rem 0.9375rem 0.625rem 0.9375rem;
         justify-content: space-between;
         align-items: center;

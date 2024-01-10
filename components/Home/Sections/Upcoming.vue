@@ -4,7 +4,7 @@
             <h3 class="popular_title">Upcoming</h3>
         </div>
         <div class="popular_card">
-            <GlobalsHighCard :type="'popularMovies'"></GlobalsHighCard>
+            <GlobalsHighCard :type="'upcoming'"></GlobalsHighCard>
         </div>
         <div class="popular_showmorecontent">
             <div class="popular_showmore">

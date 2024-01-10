@@ -1,5 +1,5 @@
 <template>
-    <h2>Popular</h2>
+    <h2>Upcoming</h2>
     <GlobalsContentCard></GlobalsContentCard>
 </template>
 

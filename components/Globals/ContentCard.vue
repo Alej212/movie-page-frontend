@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -18,7 +18,7 @@ contentType.value = 'series'
 } else if (route.name === 'movies') {
 contentType.value = 'movies'
 } else if (route.name === 'upcoming') {
-contentType.value = 'popularMovies'
+contentType.value = 'upcoming'
 }
 </script>
 

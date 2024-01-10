@@ -1,6 +1,6 @@
 <template>
     <GlobalsVisualizer></GlobalsVisualizer>
-    <GlobalsContentLetter></GlobalsContentLetter>
+    <GlobalsContentSeasons></GlobalsContentSeasons>
     <GlobalsContentInfo></GlobalsContentInfo>
 </template>
 
