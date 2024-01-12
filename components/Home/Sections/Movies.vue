@@ -4,7 +4,7 @@
             <h3 class="moviesection_title">Movies</h3>
         </div>
         <div class="moviesection_card">
-            <GlobalsHighCard :type="'movies'"></GlobalsHighCard>
+            <PagesIndexHighCard :type="'movies'"></PagesIndexHighCard>
         </div>
         <div class="moviesection_showmorecontent">
             <div class="moviesection_showmore">

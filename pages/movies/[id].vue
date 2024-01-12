@@ -1,7 +1,7 @@
 <template>
-    <GlobalsVisualizer></GlobalsVisualizer>
-    <GlobalsContentSeasons></GlobalsContentSeasons>
-    <GlobalsContentInfo></GlobalsContentInfo>
+    <PagesIDVisualizer></PagesIDVisualizer>
+    <PagesIDContentSeasons></PagesIDContentSeasons>
+    <PagesIDContentInfo></PagesIDContentInfo>
 </template>
 
 <script setup></script>

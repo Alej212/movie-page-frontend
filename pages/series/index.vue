@@ -1,6 +1,6 @@
 <template>
     <h2>Series</h2>
-    <GlobalsContentCard></GlobalsContentCard>
+    <PagesIndexContentCard></PagesIndexContentCard>
 </template>
 
 <script setup></script>

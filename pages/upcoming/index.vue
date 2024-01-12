@@ -1,6 +1,6 @@
 <template>
     <h2>Upcoming</h2>
-    <GlobalsContentCard></GlobalsContentCard>
+    <PagesIndexContentCard></PagesIndexContentCard>
 </template>
 
 <script setup></script>

@@ -4,14 +4,14 @@
             <h3 class="popular_title">Upcoming</h3>
         </div>
         <div class="popular_card">
-            <GlobalsHighCard :type="'upcoming'"></GlobalsHighCard>
+            <PagesIndexHighCard :type="'upcoming'"></PagesIndexHighCard>
         </div>
         <div class="popular_showmorecontent">
             <div class="popular_showmore">
-                    <p class="popular_p">More</p>
-                    <NuxtLink to="/upcoming" class="popular_link"> 
-                        <Icon name="foundation:indent-more" class="popular_icon"></Icon>
-                    </NuxtLink>
+                <p class="popular_p">More</p>
+                <NuxtLink to="/upcoming" class="popular_link"> 
+                    <Icon name="foundation:indent-more" class="popular_icon"></Icon>
+                </NuxtLink>
             </div>
         </div>
     </section>

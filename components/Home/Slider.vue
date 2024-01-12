@@ -31,18 +31,13 @@
     display: flex;
     height: 45rem;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    align-self: stretch;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url('../../assets/images/image1.png'), lightgray 50% / cover no-repeat;
 
     &_content {
         display: flex;
         justify-content: center;
-        align-items: flex-end;
         gap: 0.625rem;
         flex: 1 0 0;
-        align-self: stretch;
     }
     &_contentleft {
         display: flex;
@@ -130,6 +125,30 @@
     }
     &_circle:nth-child(1) {
         background-color: #980033;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .imgtop {
+
+        &_content {
+            flex-flow: column nowrap;
+        }
+        &_contentleft {
+            display: none;
+        }
+
+        &_contentrigth {
+            display: flex;
+            padding: 0;
+            padding-bottom: 3rem;
+            justify-content: flex-end;
+            flex-flow: column-reverse;
+            align-items: center;
+            gap: 0.625rem;
+            /* flex: 1 0 0; */
+            align-self: stretch;
+        }
     }
 }
 </style>

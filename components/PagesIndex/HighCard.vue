@@ -39,8 +39,6 @@ onMounted(async () => {
     movies.value = movieStore.$state.series
   }
 })
-
-console.log(movies.value)
 </script>
 
 <style scoped lang="scss">

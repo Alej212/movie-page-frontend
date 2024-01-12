@@ -4,7 +4,7 @@
             <h3 class="seriescontent_title">Series</h3>
         </div>
         <div class="seriescontent_card">
-            <GlobalsHighCard :type="'series'"></GlobalsHighCard>
+            <PagesIndexHighCard :type="'series'"></PagesIndexHighCard>
         </div>
         <div class="seriescontent_showmorecontent">
             <div class="seriescontent_showmore">

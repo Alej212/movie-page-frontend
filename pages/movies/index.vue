@@ -1,6 +1,6 @@
 <template>
     <h2>Movies</h2>
-    <GlobalsContentCard></GlobalsContentCard>
+    <PagesIndexContentCard></PagesIndexContentCard>
 </template>
 
 <script setup></script>

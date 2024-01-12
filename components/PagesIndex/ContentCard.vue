@@ -1,7 +1,7 @@
 <template>
     <div class="div">
         <div class="div_cards">
-            <GlobalsHighCard :type="contentType"></GlobalsHighCard>
+            <PagesIndexHighCard :type="contentType" ></PagesIndexHighCard>
         </div>
     </div>
 </template>
