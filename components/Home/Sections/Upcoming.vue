@@ -2,17 +2,15 @@
     <section class="popular" id="popularMovies">
         <div class="popular_contenttitle">
             <h3 class="popular_title">Upcoming</h3>
-        </div>
-        <div class="popular_card">
-            <PagesIndexHighCard :type="'upcoming'"></PagesIndexHighCard>
-        </div>
-        <div class="popular_showmorecontent">
             <div class="popular_showmore">
                 <p class="popular_p">More</p>
                 <NuxtLink to="/upcoming" class="popular_link"> 
                     <Icon name="foundation:indent-more" class="popular_icon"></Icon>
                 </NuxtLink>
             </div>
+        </div>
+        <div class="popular_card">
+            <PagesIndexHighCard :type="'upcoming'"></PagesIndexHighCard>
         </div>
     </section>
 </template>
@@ -22,7 +20,7 @@
 <style scoped lang="scss">
 .popular {
     display: flex;
-    padding: 3.125rem 0rem 3.125rem 1.25rem;
+    padding-left: 1.25rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 2.5rem;
@@ -32,8 +30,9 @@
     &_contenttitle {
         display: flex;
         align-items: flex-start;
-        gap: 0.625rem;
+        justify-content: space-between;
         align-self: stretch;
+        align-items: center;
     }
     &_title {
         color: #000;

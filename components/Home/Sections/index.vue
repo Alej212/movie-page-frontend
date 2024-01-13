@@ -14,5 +14,8 @@
     flex-direction: column;
     align-items: flex-start;
     align-self: stretch;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    gap: 3rem;
 }
 </style>

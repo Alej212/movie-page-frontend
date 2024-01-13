@@ -2,19 +2,17 @@
     <section class="seriescontent" id="series">
         <div class="seriescontent_contenttitle">
             <h3 class="seriescontent_title">Series</h3>
+            <div class="seriescontent_showmore">
+                <p class="seriescontent_p">More</p>
+                <NuxtLink to="/series" class="seriescontent_link"> 
+                    <Icon name="foundation:indent-more" class="seriescontent_icon"></Icon>
+                </NuxtLink>
+            </div>
         </div>
         <div class="seriescontent_card">
             <PagesIndexHighCard :type="'series'"></PagesIndexHighCard>
         </div>
-        <div class="seriescontent_showmorecontent">
-            <div class="seriescontent_showmore">
-                    <p class="seriescontent_p">More</p>
-                    <NuxtLink to="/series" class="seriescontent_link"> 
-                        <Icon name="foundation:indent-more" class="seriescontent_icon"></Icon>
-                    </NuxtLink>
-            </div>
-        </div>
-    </section>
+      </section>
 </template>
 
 <script setup></script>
@@ -22,7 +20,7 @@
 <style scoped lang="scss">
 .seriescontent {
     display: flex;
-    padding: 3.125rem 0rem 3.125rem 1.25rem;
+    padding-left: 1.25rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 2.5rem;
@@ -32,8 +30,9 @@
     &_contenttitle {
         display: flex;
         align-items: flex-start;
-        gap: 0.625rem;
+        justify-content: space-between;
         align-self: stretch;
+        align-items: center;
     }
     &_title {
         color: #000;

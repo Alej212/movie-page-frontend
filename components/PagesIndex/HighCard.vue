@@ -10,7 +10,7 @@
             </div>
             <div class="card_ranking">
                 <Icon name="mdi:heart"></Icon>
-                <h5 class="card_h5">{{ movie.vote_average * 10}}%</h5>
+                <h5 class="card_h5">{{ Math.floor(movie.vote_average * 10) }}%</h5>
             </div>
         </div>
     </div>
@@ -44,23 +44,22 @@ onMounted(async () => {
 <style scoped lang="scss">
 .card {
         display: flex;
-        width: 12.5rem;
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-start;
+        width: min-content;
 
         &_image {
         display: flex;
         height: 15.625rem;
+        width: 10rem;
         flex-direction: column;
         align-items: flex-end;
-        gap: 0.625rem;
         align-self: stretch;
         }
         &_info {
             display: flex;
             height: 7.5rem;
-            padding: 0.625rem;
             flex-direction: column;
             align-items: flex-start;
             gap: 0.625rem;
@@ -110,6 +109,7 @@ onMounted(async () => {
         &_image {
             display: flex;
             height: 12rem;
+            width: auto;
             flex-direction: column;
             align-items: flex-end;
             gap: 0.625rem;

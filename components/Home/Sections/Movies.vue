@@ -2,17 +2,15 @@
     <section class="moviesection" id="movies">
         <div class="moviesection_contenttitle">
             <h3 class="moviesection_title">Movies</h3>
+            <div class="moviesection_showmore">
+                <p class="moviesection_p">More</p>
+                <NuxtLink to="/movies" class="moviesection_link"> 
+                    <Icon name="foundation:indent-more" class="moviesection_icon"></Icon>
+                </NuxtLink>
+            </div>
         </div>
         <div class="moviesection_card">
             <PagesIndexHighCard :type="'movies'"></PagesIndexHighCard>
-        </div>
-        <div class="moviesection_showmorecontent">
-            <div class="moviesection_showmore">
-                    <p class="moviesection_p">More</p>
-                    <NuxtLink to="/movies" class="moviesection_link"> 
-                        <Icon name="foundation:indent-more" class="moviesection_icon"></Icon>
-                    </NuxtLink>
-            </div>
         </div>
     </section>
 </template>
@@ -22,7 +20,7 @@
 <style scoped lang="scss">
 .moviesection {
     display: flex;
-    padding: 3.125rem 0rem 3.125rem 1.25rem;
+    padding-left: 1.25rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 2.5rem;
@@ -32,8 +30,9 @@
     &_contenttitle {
         display: flex;
         align-items: flex-start;
-        gap: 0.625rem;
+        justify-content: space-between;
         align-self: stretch;
+        align-items: center;
     }
     &_title {
         color: #000;

@@ -143,7 +143,7 @@ onMounted(async () => {
 @media screen and (max-width:900px) {
     .imgtop {
         display: flex;
-        height: 30rem;
+        height: 25rem;
         flex-direction: column;
         background-size: cover;
         background-repeat: no-repeat;

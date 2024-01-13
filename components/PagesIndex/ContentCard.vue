@@ -42,4 +42,8 @@ contentType.value = 'upcoming'
         flex-wrap: wrap;
     }
 }
+
+@media screen and (max-width: 900px) {
+    
+}
 </style>
