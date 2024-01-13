@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/sass/_default.scss'],
@@ -11,5 +10,10 @@ export default defineNuxtConfig({
       }
     }
   },
-  modules: ['nuxt-icon', '@pinia/nuxt','@pinia-plugin-persistedstate/nuxt'],
+  modules: ['nuxt-icon', '@pinia/nuxt','@pinia-plugin-persistedstate/nuxt', 'nuxt-swiper'],
+  // swiper: {
+  //   prefix: 'Swiper',
+  //   styleLang: 'scss',
+  //   modules: ['navigation', 'pagination'],
+  // }
 })

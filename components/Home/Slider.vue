@@ -1,38 +1,56 @@
 <template>
-    <div class="imgtop">
+  <Swiper
+    :modules="[SwiperAutoplay, SwiperEffectCreative, SwiperPagination]"
+    :slides-per-view="1"
+    :loop="true"
+    :effect="'creative'"
+    :autoplay="{ delay: 4000, disableOnInteraction: true, }"
+    :creative-effect="{ prev: { shadow: false, translate: ['-20%', 0, -1], }, next: { translate: ['100%', 0, 0], }, }"
+  >
+    <SwiperSlide v-for="movie in movies" :key="movie.id">
+      <div class="imgtop" :style="{ backgroundImage: 'url(https://image.tmdb.org/t/p/w500' + movie.backdrop_path + ')' }">
         <div class="imgtop_content">
-            <div class="imgtop_contentleft">
-                <h1 class="imgtop_h1">TITLE MOVIE</h1>
-                <h6 class="imgtop_h6">
-                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </h6>
+          <div class="imgtop_contentleft">
+            <h1 class="imgtop_h1">{{ movie.title }}</h1>
+            <h6 class="imgtop_h6">{{ movie.overview }}</h6>
+          </div>
+          <div class="imgtop_contentrigth">
+            <div class="imgtop_button">
+              <p class="imgtop_p">Show trailer</p>
+              <Icon name="material-symbols:slideshow-outline" class="imgtop_icon"></Icon>
             </div>
-            <div class="imgtop_contentrigth">
-                <div class="imgtop_button">
-                    <p class="imgtop_p">Show trailer</p>
-                    <Icon name="material-symbols:slideshow-outline" class="imgtop_icon"></Icon>
-                </div>
-                <div class="imgtop_movie"></div>
-            </div>
+            <img class="imgtop_movie" :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="movie image">
+          </div>
         </div>
-        <div class="imgtop_circles">
-            <div class="imgtop_circle"></div>
-            <div class="imgtop_circle"></div>
-            <div class="imgtop_circle"></div>
-            <div class="imgtop_circle"></div>
-        </div>
-    </div>
+      </div>
+    </SwiperSlide>
+  </Swiper>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useMovieStore } from '../../store/FetchMovies'
+
+const movieStore = useMovieStore()
+const movies = ref([])
+
+
+onMounted(async () => {
+    await movieStore.fetchPopularMovies()
+    movies.value = movieStore.$state.popularMovies
+})
+
+
+</script>
 
 <style scoped lang="scss">
 .imgtop {
     display: flex;
     height: 45rem;
     flex-direction: column;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url('../../assets/images/image1.png'), lightgray 50% / cover no-repeat;
-
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     &_content {
         display: flex;
         justify-content: center;
@@ -103,11 +121,9 @@
         display: flex;
         width: 13.125rem;
         height: 16.25rem;
-        padding: 0.625rem;
         flex-direction: column;
         align-items: flex-end;
         gap: 0.625rem;
-        background: url('../../assets/images/image1.png'), lightgray 50% / cover no-repeat;
     }
     &_circles {
         display: flex;
@@ -142,7 +158,7 @@
             display: flex;
             padding: 0;
             padding-bottom: 3rem;
-            justify-content: flex-end;
+            justify-content: flex-start;
             flex-flow: column-reverse;
             align-items: center;
             gap: 0.625rem;
