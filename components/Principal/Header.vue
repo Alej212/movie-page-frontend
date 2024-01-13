@@ -9,12 +9,6 @@
         </form>
         <ul class="header_ul">
             <li class="header_li">
-                <Icon name="mdi:heart" class="header_icon"></Icon>
-            </li>
-            <li class="header_li">
-                <Icon name="wpf:worldwide-location" class="header_icon"></Icon>
-            </li>
-            <li class="header_li">
                 <Icon name="mingcute:user-4-fill" class="header_iconXl"></Icon>
             </li>
         </ul>
@@ -77,6 +71,12 @@
         justify-content: center;
         align-items: center;
         gap: 1.1875rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .header_search {
+        display: none;
     }
 }
 </style>

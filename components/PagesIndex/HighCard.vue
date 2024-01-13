@@ -52,12 +52,10 @@ onMounted(async () => {
         &_image {
         display: flex;
         height: 15.625rem;
-        //padding: 0.625rem;
         flex-direction: column;
         align-items: flex-end;
         gap: 0.625rem;
         align-self: stretch;
-        //background: url('../../assets/images/image1.png'), lightgray 50% / cover no-repeat;
         }
         &_info {
             display: flex;
@@ -75,20 +73,13 @@ onMounted(async () => {
             font-style: normal;
             font-weight: 700;
             line-height: normal;
+            align-self: stretch;
         }
         &_date {
             display: flex;
             padding: 0.1875rem;
             align-items: flex-start;
             gap: 0.625rem;
-        }
-        h6 {
-            color: #000;
-            font-family: 'InterBold';
-            font-size: 0.75rem;
-            font-style: normal;
-            font-weight: 500;
-            line-height: normal;
         }
         &_ranking {
             display: flex;
@@ -97,5 +88,33 @@ onMounted(async () => {
             gap: 0.3125rem;
         }
     }
+
+    h6 {
+            color: #000;
+            font-family: 'InterBold';
+            font-size: 0.75rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            align-self: stretch;
+        }
     
+@media screen and (max-width: 900px) {
+    .card {
+        display: flex;
+        width: 8rem;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+
+        &_image {
+            display: flex;
+            height: 12rem;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.625rem;
+            align-self: stretch;
+        }
+    }
+}
 </style>

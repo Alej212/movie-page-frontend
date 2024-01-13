@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="section_img">
-            <img src="" alt="image movie">
+            <img :src="`https://image.tmdb.org/t/p/w500${movie.backdrop_path }`" alt="image movie" class="section_image">
         </div>
     </section>
 </template>
@@ -45,19 +45,20 @@ onMounted(fetchData)
 <style scoped lang="scss">
 .section {
     display: flex;
-    height: 25.5625rem;
-    padding: 0.625rem 1.875rem;
+    padding: 0 3.125rem 3.125rem 3.125rem;
     gap: 2.5rem;
 
     &_contentinfo {
         display: flex;
         flex-flow: column nowrap;
         gap: 2rem;
-        padding-top: 2rem;
         width: 50%;
     }
     &_img {
         background-color: aquamarine;
+        width: 100%;
+    }
+    &_image {
         width: 100%;
         height: 100%;
     }
@@ -111,5 +112,20 @@ onMounted(fetchData)
         font-weight: 400;
         line-height: normal;
     }
+}
+
+@media screen and (max-width: 900px) {
+    .section {
+        padding: 0 1rem 0 1rem;
+    }
+    .section_img {
+        display: none;
+    }
+    .section_contentinfo {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 2rem;
+        width: 100%;
+}
 }
 </style>

@@ -5,12 +5,12 @@
             <PagesIDWideLetter></PagesIDWideLetter>
         </ul>
     </section>
-    <section class="section" v-else>
+    <!-- <section class="section" v-else>
         <h3 class="section_h3">Movies</h3>
         <ul class="section_content">
             <PagesIDWideLetter></PagesIDWideLetter>
         </ul>
-    </section>
+    </section> -->
 </template>
 
 <script setup>

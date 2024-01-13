@@ -83,4 +83,29 @@
         height: 2.5rem;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .seriescontent {
+        &_p {
+            color: #000;
+            font-family: 'InterBold';
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+        &_link {
+            display: flex;
+            padding: 0.3125rem;
+            justify-content: center;
+            align-items: center;
+            gap: 0.625rem;
+        }
+        &_icon {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+}
 </style>

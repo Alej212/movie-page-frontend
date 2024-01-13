@@ -71,7 +71,6 @@ onMounted(async () => {
         align-items: center;
         flex: 1 0 0;
         align-self: stretch;
-        //background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url('../../assets/images/image1.png'), lightgray 50% / cover no-repeat;
     }
     &_iconplay {
         width: 5rem;
@@ -128,5 +127,26 @@ onMounted(async () => {
         height: 1.25rem;
         color: hsla(340, 100%, 30%, 1)
     }
+}
+
+@media screen and (max-width: 900px) {
+  .visualizer {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+    align-self: stretch;
+    
+    &_content {
+      display: flex;
+      height: 25rem;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      align-self: stretch;
+      background: #D6D6D6;
+    }
+  }
 }
 </style>

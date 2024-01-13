@@ -15,10 +15,6 @@
             <h6 class="imgtop_h6">{{ movie.overview }}</h6>
           </div>
           <div class="imgtop_contentrigth">
-            <div class="imgtop_button">
-              <p class="imgtop_p">Show trailer</p>
-              <Icon name="material-symbols:slideshow-outline" class="imgtop_icon"></Icon>
-            </div>
             <img class="imgtop_movie" :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="movie image">
           </div>
         </div>
@@ -144,8 +140,14 @@ onMounted(async () => {
     }
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:900px) {
     .imgtop {
+        display: flex;
+        height: 30rem;
+        flex-direction: column;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
 
         &_content {
             flex-flow: column nowrap;
@@ -164,6 +166,14 @@ onMounted(async () => {
             gap: 0.625rem;
             /* flex: 1 0 0; */
             align-self: stretch;
+        }
+        &_movie {
+            display: flex;
+            width: 9rem;
+            height: 12rem;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.625rem;
         }
     }
 }
