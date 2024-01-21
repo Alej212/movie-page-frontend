@@ -9,6 +9,7 @@ export const useMovieStore = defineStore('movie', {
     upcoming: [],
     movieDetail: [],
     serieDetail: [],
+    imageResource: [],
   }),
   actions: {
     async fetchMovies() {
@@ -58,6 +59,41 @@ export const useMovieStore = defineStore('movie', {
         }
       })
       this.serieDetail = response.data
-    }
+    },
+    async searchMovies(query) {
+      const response = await axios.get(`https://api.themoviedb.org/3/search/movie`, {
+        params: {
+          api_key: '0b424004cc638a79ae8c6d443318e705',
+          query: query
+        },
+      })
+      this.movies = response.data.results
+    },
+    async searchSeries(query) {
+      const response = await axios.get(`https://api.themoviedb.org/3/search/tv`, {
+        params: {
+          api_key: '0b424004cc638a79ae8c6d443318e705',
+          query: query
+        },
+      })
+      this.series = response.data.results
+    },
+    async searchUpcomingMovies(query) {
+      const response = await axios.get(`https://api.themoviedb.org/3/search/movie`, {
+        params: {
+          api_key: '0b424004cc638a79ae8c6d443318e705',
+          query: query
+        },
+      })
+      this.upcoming = response.data.results.filter(movie => movie.release_date > new Date().toISOString())
+    },
+    async imageResource(id) {
+      const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}/images?api_key=0b424004cc638a79ae8c6d443318e705`, {
+        params: {
+          api_key: '0b424004cc638a79ae8c6d443318e705',
+        }
+      })
+      this.imageResource = response.data
+    } 
   },
 })

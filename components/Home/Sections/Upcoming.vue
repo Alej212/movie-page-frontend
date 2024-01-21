@@ -3,9 +3,8 @@
         <div class="popular_contenttitle">
             <h3 class="popular_title">Upcoming</h3>
             <div class="popular_showmore">
-                <p class="popular_p">More</p>
                 <NuxtLink to="/upcoming" class="popular_link"> 
-                    <Icon name="foundation:indent-more" class="popular_icon"></Icon>
+                    <p class="popular_p">View all</p>
                 </NuxtLink>
             </div>
         </div>
@@ -20,7 +19,6 @@
 <style scoped lang="scss">
 .popular {
     display: flex;
-    padding-left: 1.25rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 2.5rem;
@@ -29,13 +27,14 @@
 
     &_contenttitle {
         display: flex;
+        margin-left: 1.25rem;
         align-items: flex-start;
         justify-content: space-between;
         align-self: stretch;
         align-items: center;
     }
     &_title {
-        color: #000;
+        color: aliceblue;
         font-family: 'InterBold';
         font-size: 2rem;
         font-style: normal;
@@ -44,8 +43,15 @@
     }
     &_card {
         display: flex;
-        align-items: flex-end;
-        gap: 2.5rem;
+        margin-left: 1.25rem;
+        align-items: flex-start;
+        gap: 2rem;
+        transition: transform 30s linear; /* Añade una transición suave */
+        overflow-x: auto; /* Permite el desplazamiento horizontal */
+        overflow-y: hidden;
+    }
+    &_card:hover {
+        transform: translateX(-80%);
     }
     &_showmorecontent {
         display: flex;
@@ -63,12 +69,13 @@
         gap: 0.625rem;
     }
     &_p {
-        color: #000;
+        color: aliceblue;
         font-family: 'InterBold';
         font-size: 1.25rem;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+        margin-right: 1rem;
     }
     &_link {
         display: flex;
@@ -86,7 +93,6 @@
 @media screen and (max-width: 900px) {
     .popular {
         &_p {
-            color: #000;
             font-family: 'InterBold';
             font-size: 1rem;
             font-style: normal;

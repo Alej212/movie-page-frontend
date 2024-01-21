@@ -3,15 +3,14 @@
         <div class="moviesection_contenttitle">
             <h3 class="moviesection_title">Movies</h3>
             <div class="moviesection_showmore">
-                <p class="moviesection_p">More</p>
                 <NuxtLink to="/movies" class="moviesection_link"> 
-                    <Icon name="foundation:indent-more" class="moviesection_icon"></Icon>
+                    <p class="moviesection_p">View all</p>
                 </NuxtLink>
             </div>
         </div>
-        <div class="moviesection_card">
-            <PagesIndexHighCard :type="'movies'"></PagesIndexHighCard>
-        </div>
+            <div class="moviesection_card">
+                <PagesIndexHighCard :type="'movies'"></PagesIndexHighCard>
+            </div>
     </section>
 </template>
 
@@ -35,7 +34,7 @@
         align-items: center;
     }
     &_title {
-        color: #000;
+        color: aliceblue;
         font-family: 'InterBold';
         font-size: 2rem;
         font-style: normal;
@@ -44,8 +43,14 @@
     }
     &_card {
         display: flex;
-        align-items: flex-end;
-        gap: 2.5rem;
+        align-items: flex-start;
+        gap: 2rem;
+        transition: transform 30s linear; /* Añade una transición suave */
+        overflow-x: auto; /* Permite el desplazamiento horizontal */
+        overflow-y: hidden;
+    }
+    &_card:hover {
+        transform: translateX(-80%);
     }
     &_showmorecontent {
         display: flex;
@@ -63,12 +68,13 @@
         gap: 0.625rem;
     }
     &_p {
-        color: #000;
+        color: aliceblue;
         font-family: 'InterBold';
         font-size: 1.25rem;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+        margin-right: 1rem;
     }
     &_link {
         display: flex;
@@ -86,7 +92,6 @@
 @media screen and (max-width: 900px) {
     .moviesection {
         &_p {
-            color: #000;
             font-family: 'InterBold';
             font-size: 1rem;
             font-style: normal;

@@ -3,9 +3,8 @@
         <div class="seriescontent_contenttitle">
             <h3 class="seriescontent_title">Series</h3>
             <div class="seriescontent_showmore">
-                <p class="seriescontent_p">More</p>
                 <NuxtLink to="/series" class="seriescontent_link"> 
-                    <Icon name="foundation:indent-more" class="seriescontent_icon"></Icon>
+                    <p class="seriescontent_p">View all</p>
                 </NuxtLink>
             </div>
         </div>
@@ -35,7 +34,7 @@
         align-items: center;
     }
     &_title {
-        color: #000;
+        color: aliceblue;
         font-family: 'InterBold';
         font-size: 2rem;
         font-style: normal;
@@ -44,8 +43,15 @@
     }
     &_card {
         display: flex;
-        align-items: flex-end;
-        gap: 2.5rem;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        gap: 2rem;
+        transition: transform 30s linear; /* Añade una transición suave */
+        overflow-x: auto; /* Permite el desplazamiento horizontal */
+        overflow-y: hidden;
+    }
+    &_card:hover {
+        transform: translateX(-80%);
     }
     &_showmorecontent {
         display: flex;
@@ -63,12 +69,13 @@
         gap: 0.625rem;
     }
     &_p {
-        color: #000;
+        color: aliceblue;
         font-family: 'InterBold';
         font-size: 1.25rem;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+        margin-right: 1rem;
     }
     &_link {
         display: flex;
@@ -86,7 +93,6 @@
 @media screen and (max-width: 900px) {
     .seriescontent {
         &_p {
-            color: #000;
             font-family: 'InterBold';
             font-size: 1rem;
             font-style: normal;

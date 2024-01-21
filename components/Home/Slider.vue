@@ -47,11 +47,23 @@ onMounted(async () => {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
     &_content {
         display: flex;
         justify-content: center;
         gap: 0.625rem;
         flex: 1 0 0;
+        z-index: 3;
     }
     &_contentleft {
         display: flex;

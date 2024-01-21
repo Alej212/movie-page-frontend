@@ -14,9 +14,6 @@
                 </ul>
             </div>
         </div>
-        <div class="section_img">
-            <img :src="`https://image.tmdb.org/t/p/w500${movie.backdrop_path }`" alt="image movie" class="section_image">
-        </div>
     </section>
 </template>
 
@@ -51,11 +48,10 @@ onMounted(fetchData)
     &_contentinfo {
         display: flex;
         flex-flow: column nowrap;
-        gap: 2rem;
+        gap: 3.5rem;
         width: 50%;
     }
     &_img {
-        background-color: aquamarine;
         width: 100%;
     }
     &_image {
@@ -70,7 +66,7 @@ onMounted(fetchData)
         align-self: stretch;
     }
     &_h3 {
-        color: #000;
+        color: aliceblue;
         font-family: 'InterBold';
         font-size: 2rem;
         font-style: normal;
@@ -78,7 +74,7 @@ onMounted(fetchData)
         line-height: normal;
     }
     &_p {
-        color: #000;
+        color: aliceblue;
         font-family: 'InterLight';
         font-size: 1rem;
         font-style: normal;
@@ -92,7 +88,7 @@ onMounted(fetchData)
         gap: 0.625rem;
     }
     &_h4 {
-        color: #000;
+        color: aliceblue;
         font-family: 'InterBold';
         font-size: 1rem;
         font-style: normal;
@@ -105,7 +101,7 @@ onMounted(fetchData)
         gap: 0.625rem;
     }
     &_li {
-        color: #000;
+        color: aliceblue;
         font-family: 'InterLight';
         font-size: 1rem;
         font-style: normal;
@@ -116,7 +112,7 @@ onMounted(fetchData)
 
 @media screen and (max-width: 900px) {
     .section {
-        padding: 0 1rem 0 1rem;
+        padding: 3.125rem 1rem 3.125rem 1rem;
     }
     .section_img {
         display: none;
@@ -124,7 +120,6 @@ onMounted(fetchData)
     .section_contentinfo {
         display: flex;
         flex-flow: column nowrap;
-        gap: 2rem;
         width: 100%;
 }
 }

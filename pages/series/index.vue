@@ -7,7 +7,7 @@
 
 <style scoped lang="scss">
 h2 {
-    color: #000;
+    color: hsla(340, 100%, 50%, 1);
     font-family: 'InterBold';
     font-size: 2rem;
     font-style: normal;

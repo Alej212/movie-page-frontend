@@ -9,8 +9,8 @@
                 <h6>{{ movie.release_date || movie.first_air_date }}</h6>
             </div>
             <div class="card_ranking">
-                <Icon name="mdi:heart"></Icon>
-                <h5 class="card_h5">{{ Math.floor(movie.vote_average * 10) }}%</h5>
+                <Icon name="mdi:heart" class="icon"></Icon>
+                <h5 class="card_h5">{{ Math.floor(movie.vote_average * 10) }}</h5>
             </div>
         </div>
     </div>
@@ -42,31 +42,34 @@ onMounted(async () => {
 </script>
 
 <style scoped lang="scss">
+.icon {
+    color: hsla(340, 100%, 30%, 1);
+}
+
 .card {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        width: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: min-content;
 
         &_image {
         display: flex;
         height: 15.625rem;
-        width: 10rem;
         flex-direction: column;
         align-items: flex-end;
         align-self: stretch;
         }
         &_info {
             display: flex;
-            height: 7.5rem;
+            height: max-content;
             flex-direction: column;
             align-items: flex-start;
             gap: 0.625rem;
             align-self: stretch;
         }
         &_h5 {
-            color: #000;
+            color: aliceblue;
             font-family: 'InterBold';
             font-size: 1rem;
             font-style: normal;
@@ -89,7 +92,7 @@ onMounted(async () => {
     }
 
     h6 {
-            color: #000;
+            color: aliceblue;
             font-family: 'InterBold';
             font-size: 0.75rem;
             font-style: normal;
