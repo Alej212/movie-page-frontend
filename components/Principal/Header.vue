@@ -9,7 +9,9 @@
       </form>
       <ul class="header_ul">
         <li class="header_li">
-          <Icon name="mingcute:user-4-fill" class="header_iconXl2"></Icon>
+          <a href="https://github.com/Alej212" target="_blank">
+            <Icon name="uil:github" class="header_iconXl2"></Icon>
+          </a>
         </li>
       </ul>
     </nav>
@@ -117,6 +119,9 @@
         height: 2.5rem;
         color: hsla(340, 100%, 30%, 1);
         margin-right: 1rem;
+    }
+    &_iconXl2:hover {
+      color: rgb(215, 29, 91);
     }
     &_search {
         display: flex;
